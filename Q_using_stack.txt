@@ -1,0 +1,96 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Queue{
+    stack<int> s;
+  
+public:
+
+void enqueue(int x);
+int deque();
+//int peek();
+void isempty();
+    
+    
+};
+
+void Queue::enqueue(int x){
+  // while(!s1.empty()){
+  //     s2.push(s1.top());
+  //     s1.pop();
+  // }
+  // s1.push(x);
+  // while(!s2.empty()){
+  //     s1.push(s2.top());
+  //     s2.pop();
+  // }
+   // s1.push(x);
+  s.push(x);
+   
+    
+    //s3=s1;
+}
+
+int Queue::deque(){
+ //int item;
+ if(s.empty()){
+     cout << "Queue is empty";
+     exit(0);
+ }
+  // pop an item from the stack
+        int x = s.top();
+        s.pop();
+  
+        // if stack becomes empty, return
+        // the popped item
+        if (s.empty())
+            return x;
+  
+        // recursive call
+        int item = deque();
+  
+        // push popped item back to the stack
+        s.push(x);
+  
+  
+  return item;//
+}
+
+//int Queue::peek(){
+//     
+//    int s = s3.size();
+//    if(s == 0)
+//    return -1;
+//    for(int i=0;i<s ;i++){
+//        s2.push(s3.top());
+//        s3.pop();
+//    }
+//    s3.empty();
+//    s3=s1;
+//   
+//     return s2.top();
+//}
+
+int main()
+{
+Queue q;
+q.enqueue(10);
+q.enqueue(20);
+cout << q.deque() << endl;
+cout << q.deque() << endl;
+q.enqueue(30);
+cout << q.deque() << endl;
+cout << q.deque() << endl;
+//q.enqueue(30);
+//q.deque();
+//q.deque();
+//cout << q.peek()<< endl;
+//q.enqueue(30);
+//q.deque();
+//cout << q.peek()<< endl;
+
+//cout << "shubham";
+return 0;
+    
+    
+}
